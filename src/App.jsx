@@ -139,7 +139,7 @@ export default function App() {
   // Google Drive sync (OAuth2 implícito)
   function gdSync(){
     setGdStatus("syncing");
-    const CLIENT_ID="SEU_CLIENT_ID_AQUI"; // substituir
+    const CLIENT_ID="624958645603-a3qqlrhod09p53t2d5j0d8v667lc8k68.apps.googleusercontent.com";
     const SCOPE="https://www.googleapis.com/auth/drive.appdata";
     const redirect=encodeURIComponent(window.location.href);
     if(!gdTokenRef.current){
@@ -634,5 +634,4 @@ const s={
   entryRight:{display:"flex",flexDirection:"column",alignItems:"flex-end",gap:6,minWidth:90},
   entryVal:{fontSize:17,fontWeight:800,color:"#22c55e"},
   confirmRow:{display:"flex",alignItems:"center",gap:5},
-  delBtn:{background:"none",border:"none",cursor:"pointer",fontSize:16,opacity:0.6},
-};
+  delBtn:{background:"none",border:"none",cursor
