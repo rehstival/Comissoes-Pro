@@ -136,33 +136,56 @@ export default function App() {
     setEntries(arr);
   }
 
-  // Google Drive sync (OAuth2 implícito)
+  // Google Drive sync usando Google Identity Services (sem redirect URI)
   function gdSync(){
-    setGdStatus("syncing");
     const CLIENT_ID="624958645603-mfvods2p3dodjkrorus37d6v6du40ss8.apps.googleusercontent.com";
     const SCOPE="https://www.googleapis.com/auth/drive.appdata";
-    const redirect=encodeURIComponent(window.location.href);
-    if(!gdTokenRef.current){
-      window.open(
-        `https://accounts.google.com/o/oauth2/v2/auth?client_id=${CLIENT_ID}&redirect_uri=${redirect}&response_type=token&scope=${SCOPE}`,
-        "_blank","width=500,height=600"
-      );
-      toast_("Complete o login no Google e tente novamente.","error");
-      setGdStatus("idle");
+
+    function doUpload(token){
+      setGdStatus("syncing");
+      const data=JSON.stringify({entries,mechanics,vehicles,savedAt:new Date().toISOString()});
+      const meta=JSON.stringify({name:"comissoespro-backup.json",parents:["appDataFolder"]});
+      const boundary="boundary_cmp";
+      const body=`--${boundary}\r\nContent-Type: application/json\r\n\r\n${meta}\r\n--${boundary}\r\nContent-Type: application/json\r\n\r\n${data}\r\n--${boundary}--`;
+      fetch("https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart",{
+        method:"POST",
+        headers:{"Authorization":`Bearer ${token}`,"Content-Type":`multipart/related; boundary=${boundary}`},
+        body,
+      })
+      .then(r=>{
+        if(r.ok){setGdStatus("ok");toast_("✅ Salvo no Google Drive!");}
+        else{setGdStatus("error");toast_("Erro ao salvar no Drive.","error");}
+      })
+      .catch(()=>{setGdStatus("error");toast_("Erro de conexão.","error");});
+    }
+
+    if(gdTokenRef.current){
+      doUpload(gdTokenRef.current);
       return;
     }
-    const token=gdTokenRef.current;
-    const data=JSON.stringify({entries,mechanics,vehicles});
-    const meta=JSON.stringify({name:"comissoespro-backup.json",parents:["appDataFolder"]});
-    const boundary="boundary_cmp";
-    const body=`--${boundary}\r\nContent-Type: application/json\r\n\r\n${meta}\r\n--${boundary}\r\nContent-Type: application/json\r\n\r\n${data}\r\n--${boundary}--`;
-    fetch("https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart",{
-      method:"POST",
-      headers:{"Authorization":`Bearer ${token}`,"Content-Type":`multipart/related; boundary=${boundary}`},
-      body,
-    })
-    .then(r=>r.ok?setGdStatus("ok"):setGdStatus("error"))
-    .catch(()=>setGdStatus("error"));
+
+    // Carrega o script do Google Identity Services se ainda não carregou
+    if(!window.google?.accounts?.oauth2){
+      const script=document.createElement("script");
+      script.src="https://accounts.google.com/gsi/client";
+      script.onload=()=>initClient();
+      document.head.appendChild(script);
+    } else {
+      initClient();
+    }
+
+    function initClient(){
+      const client=window.google.accounts.oauth2.initTokenClient({
+        client_id:CLIENT_ID,
+        scope:SCOPE,
+        callback:(resp)=>{
+          if(resp.error){setGdStatus("error");toast_("Erro no login Google.","error");return;}
+          gdTokenRef.current=resp.access_token;
+          doUpload(resp.access_token);
+        },
+      });
+      client.requestToken();
+    }
   }
 
   // Gerar PDF
