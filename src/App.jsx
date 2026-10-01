@@ -136,56 +136,44 @@ export default function App() {
     setEntries(arr);
   }
 
-  // Google Drive sync usando Google Identity Services (sem redirect URI)
+  // Google Drive sync — download/upload JSON local
   function gdSync(){
-    const CLIENT_ID="624958645603-mfvods2p3dodjkrorus37d6v6du40ss8.apps.googleusercontent.com";
-    const SCOPE="https://www.googleapis.com/auth/drive.appdata";
-
-    function doUpload(token){
-      setGdStatus("syncing");
-      const data=JSON.stringify({entries,mechanics,vehicles,savedAt:new Date().toISOString()});
-      const meta=JSON.stringify({name:"comissoespro-backup.json",parents:["appDataFolder"]});
-      const boundary="boundary_cmp";
-      const body=`--${boundary}\r\nContent-Type: application/json\r\n\r\n${meta}\r\n--${boundary}\r\nContent-Type: application/json\r\n\r\n${data}\r\n--${boundary}--`;
-      fetch("https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart",{
-        method:"POST",
-        headers:{"Authorization":`Bearer ${token}`,"Content-Type":`multipart/related; boundary=${boundary}`},
-        body,
-      })
-      .then(r=>{
-        if(r.ok){setGdStatus("ok");toast_("✅ Salvo no Google Drive!");}
-        else{setGdStatus("error");toast_("Erro ao salvar no Drive.","error");}
-      })
-      .catch(()=>{setGdStatus("error");toast_("Erro de conexão.","error");});
+    try{
+      const data=JSON.stringify({entries,mechanics,vehicles,savedAt:new Date().toISOString()},null,2);
+      const blob=new Blob([data],{type:"application/json"});
+      const url=URL.createObjectURL(blob);
+      const a=document.createElement("a");
+      a.href=url;
+      a.download=`comissoespro-backup-${new Date().toISOString().split("T")[0]}.json`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      setGdStatus("ok");
+      toast_("✅ Backup baixado com sucesso!");
+    }catch(e){
+      setGdStatus("error");
+      toast_("Erro ao gerar backup.","error");
     }
+  }
 
-    if(gdTokenRef.current){
-      doUpload(gdTokenRef.current);
-      return;
-    }
-
-    // Carrega o script do Google Identity Services se ainda não carregou
-    if(!window.google?.accounts?.oauth2){
-      const script=document.createElement("script");
-      script.src="https://accounts.google.com/gsi/client";
-      script.onload=()=>initClient();
-      document.head.appendChild(script);
-    } else {
-      initClient();
-    }
-
-    function initClient(){
-      const client=window.google.accounts.oauth2.initTokenClient({
-        client_id:CLIENT_ID,
-        scope:SCOPE,
-        callback:(resp)=>{
-          if(resp.error){setGdStatus("error");toast_("Erro no login Google.","error");return;}
-          gdTokenRef.current=resp.access_token;
-          doUpload(resp.access_token);
-        },
-      });
-      client.requestToken();
-    }
+  function gdRestore(e){
+    const file=e.target.files[0];
+    if(!file) return;
+    const reader=new FileReader();
+    reader.onload=(ev)=>{
+      try{
+        const data=JSON.parse(ev.target.result);
+        if(data.entries) setEntries(data.entries);
+        if(data.mechanics) setMechanics(data.mechanics);
+        if(data.vehicles) setVehicles(data.vehicles);
+        toast_("✅ Dados restaurados com sucesso!");
+      }catch{
+        toast_("Arquivo inválido.","error");
+      }
+    };
+    reader.readAsText(file);
+    e.target.value="";
   }
 
   // Gerar PDF
@@ -313,13 +301,15 @@ export default function App() {
           <div style={s.hTitle}>ComissõesPro</div>
           <div style={s.hSub}>JetLub • Caldas Novas</div>
         </div>
-        <button
-          style={{...s.btnGray, fontSize:12, opacity: gdStatus==="syncing"?0.6:1}}
-          onClick={gdSync}
-          disabled={gdStatus==="syncing"}
-        >
-          {gdStatus==="syncing"?"⏳ Sincronizando...":gdStatus==="ok"?"✅ Salvo no Drive":gdStatus==="error"?"❌ Erro Drive":"☁️ Salvar no Drive"}
-        </button>
+        <div style={{display:"flex",gap:6,alignItems:"center"}}>
+          <button style={{...s.btnGray,fontSize:12}} onClick={gdSync}>
+            {gdStatus==="ok"?"✅ Backup feito":"💾 Fazer Backup"}
+          </button>
+          <label style={{...s.btnGray,fontSize:12,cursor:"pointer",marginBottom:0}}>
+            📂 Restaurar
+            <input type="file" accept=".json" style={{display:"none"}} onChange={gdRestore}/>
+          </label>
+        </div>
       </div>
 
       {/* Tabs */}
