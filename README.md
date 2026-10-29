@@ -6,7 +6,7 @@
 
 ### Sistema Profissional de Gestão de Comissões para Oficinas Mecânicas
 
-Controle comissões, lançamentos, mecânicos, veículos e relatórios financeiros em uma plataforma moderna, rápida e intuitiva.
+Gerencie comissões, serviços, mecânicos, veículos e relatórios em uma plataforma moderna, rápida e intuitiva.
 
 ![Next.js](https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=next.js)
 ![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black)
@@ -14,117 +14,134 @@ Controle comissões, lançamentos, mecânicos, veículos e relatórios financeir
 ![Status](https://img.shields.io/badge/Status-Ativo-success?style=for-the-badge)
 ![License](https://img.shields.io/badge/Licença-Privada-red?style=for-the-badge)
 
-🌐 **Demo:** https://comissoes-pro-ashen.vercel.app/
+🌐 **Aplicação Online:**  
+https://comissoes-pro-ashen.vercel.app/
 
 </div>
 
 ---
 
-## 📖 Sobre
+## 📖 Sobre o Projeto
 
-O **ComissõesPro** foi desenvolvido para simplificar a gestão de comissões em oficinas mecânicas e centros automotivos.
+O **ComissõesPro** é uma plataforma desenvolvida para facilitar o controle de comissões em oficinas mecânicas e centros automotivos.
 
-A plataforma permite registrar serviços realizados, calcular automaticamente as comissões dos mecânicos, aplicar descontos e taxas, gerar relatórios detalhados e acompanhar os resultados financeiros em tempo real.
+O sistema permite registrar serviços executados, gerenciar mecânicos e veículos, calcular automaticamente comissões, aplicar descontos e gerar relatórios completos para acompanhamento financeiro.
 
-Além disso, o sistema possui recursos de **backup e restauração**, garantindo maior segurança para as informações da empresa.
+Além disso, conta com recursos de **backup e restauração de dados**, oferecendo mais segurança e confiabilidade para a operação diária.
 
 ---
 
 ## 📸 Demonstração
 
-### Dashboard e Relatórios
+### Dashboard Financeiro
 
 <p align="center">
-  <img src="./public/screenshots/dashboard.png" alt="Dashboard" width="900">
+  <img src="./public/screenshots/dashboard.png" alt="Dashboard Financeiro" width="100%">
 </p>
-
-### Novo Lançamento
-
-<p align="center">
-  <img src="./public/screenshots/lancamento.png" alt="Lançamento" width="900">
-</p>
-
-> Salve as capturas acima na pasta `public/screenshots`.
 
 ---
 
-# ✨ Funcionalidades
+### Cadastro de Lançamentos
 
-## 💰 Controle de Comissões
+<p align="center">
+  <img src="./public/screenshots/lancamento.png" alt="Tela de Lançamentos" width="100%">
+</p>
+
+---
+
+### Backup e Restauração
+
+<p align="center">
+  <img src="./public/screenshots/backup.png" alt="Backup e Restauração" width="100%">
+</p>
+
+---
+
+## ✨ Funcionalidades
+
+### 💰 Gestão de Comissões
 
 - Cálculo automático de comissão
-- Comissão percentual
+- Comissão por percentual
 - Comissão por valor fixo
-- Controle de descontos e taxas
-- Cálculo automático do valor líquido
+- Controle de comissão bruta e líquida
+- Aplicação de descontos e taxas
 
-## 🔧 Gestão de Mecânicos
+### 🔧 Gestão de Mecânicos
 
 - Cadastro de mecânicos
-- Histórico de lançamentos
-- Controle individual de desempenho
+- Controle de produtividade
+- Histórico individual de serviços
 - Acompanhamento de ganhos
 
-## 🚗 Gestão de Veículos
+### 🚗 Gestão de Veículos
 
 - Cadastro de veículos
-- Associação aos serviços realizados
-- Organização dos atendimentos
+- Associação de serviços aos veículos
+- Controle organizado dos atendimentos
 
-## 📊 Relatórios
+### 📋 Gestão de Serviços
 
-- Relatórios mensais
-- Visualização por período
-- Filtros avançados
-- Totais consolidados
-- Comissão bruta e líquida
+- Registro de Ordens de Serviço
+- Controle por data
+- Histórico de lançamentos
+- Filtros por período
 
-## 💾 Backup e Segurança
+### 📊 Relatórios Financeiros
 
-- Geração de backup local dos dados
-- Exportação rápida das informações
-- Restauração completa do sistema através de arquivo de backup
-- Proteção contra perda de dados
+- Total de mão de obra
+- Total de descontos
+- Comissão bruta
+- Comissão líquida
+- Resumo mensal
 
-## 📱 Interface Moderna
+### 💾 Backup e Segurança
 
-- Layout responsivo
+- Exportação completa dos dados
+- Backup local em arquivo
+- Restauração em poucos cliques
+- Recuperação rápida das informações
+- Proteção contra perda acidental de dados
+
+### 📱 Interface Moderna
+
+- Responsiva
 - Tema escuro profissional
 - Navegação intuitiva
-- Compatível com desktop, tablet e smartphone
+- Compatível com desktop e dispositivos móveis
 
 ---
 
-# 🎯 Benefícios
+## 🎯 Benefícios
 
-✅ Economia de tempo
+✅ Elimina planilhas complexas
 
-✅ Redução de erros manuais
+✅ Automatiza cálculos de comissão
 
-✅ Controle financeiro centralizado
+✅ Reduz erros operacionais
 
-✅ Transparência nas comissões
+✅ Centraliza informações da oficina
 
-✅ Segurança dos dados com backup
+✅ Facilita auditorias internas
 
-✅ Relatórios rápidos e organizados
+✅ Aumenta a produtividade da equipe
 
-✅ Melhor acompanhamento dos resultados
+✅ Garante segurança através de backups
 
 ---
 
-# 🛠️ Tecnologias
+## 🛠 Tecnologias Utilizadas
 
 - Next.js
 - React
 - JavaScript
-- Tailwind CSS
+- CSS Moderno
 - Vercel
-- Local Storage para persistência dos dados
+- Local Storage
 
 ---
 
-# 🚀 Instalação
+## 🚀 Instalação
 
 Clone o repositório:
 
@@ -150,7 +167,7 @@ Execute o projeto:
 npm run dev
 ```
 
-Abra:
+Abra no navegador:
 
 ```txt
 http://localhost:3000
@@ -158,66 +175,54 @@ http://localhost:3000
 
 ---
 
-# 📁 Estrutura
+## 🔐 Backup e Restauração
 
-```txt
-Comissoes-Pro/
-│
-├── app/
-├── components/
-├── public/
-│   └── screenshots/
-├── lib/
-├── styles/
-├── package.json
-├── next.config.js
-└── README.md
-```
+O ComissõesPro possui um sistema integrado de backup que permite armazenar todas as informações cadastradas localmente.
+
+### Recursos disponíveis
+
+- Exportação dos dados para arquivo
+- Recuperação completa das informações
+- Migração entre computadores
+- Proteção contra perda de dados
+- Processo simples e rápido
 
 ---
 
-# 🔐 Backup e Recuperação
+## 🌎 Produção
 
-O sistema possui uma funcionalidade integrada de backup que permite salvar todos os dados cadastrados em um arquivo local.
-
-Em caso de troca de computador, limpeza do navegador ou necessidade de recuperação, basta utilizar a função **Restaurar Backup** para recuperar as informações anteriormente salvas.
-
----
-
-# 🌎 Produção
-
-A aplicação está disponível em:
+Acesse a aplicação:
 
 👉 https://comissoes-pro-ashen.vercel.app/
 
 ---
 
-# 🔮 Roadmap
+## 🔮 Roadmap
 
-- [ ] Exportação PDF
-- [ ] Relatórios avançados
+- [ ] Exportação em PDF
 - [ ] Dashboard com gráficos
-- [ ] Multiusuários
+- [ ] Integração com banco de dados
+- [ ] Sistema de usuários
 - [ ] Controle de permissões
 - [ ] Backup em nuvem
+- [ ] Relatórios avançados
 - [ ] Integração com WhatsApp
-- [ ] Integração com ERP
 
 ---
 
-# 👨‍💻 Desenvolvedor
+## 👨‍💻 Desenvolvedor
 
-**Rehstival**
+Desenvolvido por **Rehstival**.
 
-Desenvolvimento focado em produtividade, automação e soluções para gestão empresarial.
+Focado em criar soluções modernas para gestão, produtividade e automação de processos.
 
 ---
 
-# 📄 Licença
+## 📄 Licença
 
 Este projeto é privado.
 
-Todos os direitos reservados © ComissõesPro.
+**© ComissõesPro - Todos os direitos reservados.**
 
 ---
 
@@ -225,6 +230,6 @@ Todos os direitos reservados © ComissõesPro.
 
 ### Simplificando a gestão de comissões para oficinas mecânicas.
 
-⭐ Se este projeto foi útil, deixe uma estrela no repositório.
+⭐ Se gostou do projeto, deixe uma estrela no repositório.
 
 </div>
