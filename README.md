@@ -2,143 +2,155 @@
 
 <div align="center">
 
+# ComissõesPro
+
+### Sistema Profissional de Gestão de Comissões para Oficinas Mecânicas
+
+Controle comissões, lançamentos, mecânicos, veículos e relatórios financeiros em uma plataforma moderna, rápida e intuitiva.
+
 ![Next.js](https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=next.js)
 ![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black)
-![Vercel](https://img.shields.io/badge/Vercel-Deployed-000000?style=for-the-badge&logo=vercel)
+![Vercel](https://img.shields.io/badge/Vercel-Produção-000000?style=for-the-badge&logo=vercel)
 ![Status](https://img.shields.io/badge/Status-Ativo-success?style=for-the-badge)
-![License](https://img.shields.io/badge/License-Private-red?style=for-the-badge)
+![License](https://img.shields.io/badge/Licença-Privada-red?style=for-the-badge)
 
-### Gestão Inteligente de Comissões e Performance Comercial
-
-Uma plataforma moderna desenvolvida para simplificar o cálculo, acompanhamento e gerenciamento de comissões de vendas, oferecendo mais transparência, controle e produtividade para equipes comerciais.
-
-🌐 **Acesse:** https://comissoes-pro-ashen.vercel.app/
+🌐 **Demo:** https://comissoes-pro-ashen.vercel.app/
 
 </div>
 
 ---
 
-## 📖 Sobre o Projeto
+## 📖 Sobre
 
-O **ComissõesPro** é uma solução completa para empresas e profissionais que desejam gerenciar comissões de vendas de forma eficiente e transparente.
+O **ComissõesPro** foi desenvolvido para simplificar a gestão de comissões em oficinas mecânicas e centros automotivos.
 
-A plataforma centraliza informações de desempenho, metas e remuneração variável em um único ambiente, permitindo que gestores e vendedores acompanhem resultados em tempo real e reduzam erros decorrentes de controles manuais.
+A plataforma permite registrar serviços realizados, calcular automaticamente as comissões dos mecânicos, aplicar descontos e taxas, gerar relatórios detalhados e acompanhar os resultados financeiros em tempo real.
 
-Com foco em usabilidade e produtividade, o sistema oferece uma experiência intuitiva tanto para usuários operacionais quanto para gestores comerciais.
+Além disso, o sistema possui recursos de **backup e restauração**, garantindo maior segurança para as informações da empresa.
 
 ---
 
 ## 📸 Demonstração
 
-### Dashboard Principal
+### Dashboard e Relatórios
 
-![Dashboard](./public/screenshots/dashboard.png)
+<p align="center">
+  <img src="./public/screenshots/dashboard.png" alt="Dashboard" width="900">
+</p>
 
-### Controle de Comissões
+### Novo Lançamento
 
-![Comissões](./public/screenshots/comissoes.png)
+<p align="center">
+  <img src="./public/screenshots/lancamento.png" alt="Lançamento" width="900">
+</p>
 
-### Relatórios e Indicadores
-
-![Relatórios](./public/screenshots/relatorios.png)
-
-> Adicione capturas reais do sistema na pasta `public/screenshots`.
+> Salve as capturas acima na pasta `public/screenshots`.
 
 ---
 
-## ✨ Funcionalidades
+# ✨ Funcionalidades
 
-### 💰 Gestão de Comissões
+## 💰 Controle de Comissões
 
-- Cálculo automático de comissões
-- Regras de comissão personalizáveis
-- Visualização detalhada dos ganhos
-- Controle de pagamentos realizados
+- Cálculo automático de comissão
+- Comissão percentual
+- Comissão por valor fixo
+- Controle de descontos e taxas
+- Cálculo automático do valor líquido
 
-### 🎯 Gestão de Metas
+## 🔧 Gestão de Mecânicos
 
-- Definição de metas comerciais
-- Acompanhamento individual e por equipe
-- Monitoramento do progresso em tempo real
+- Cadastro de mecânicos
+- Histórico de lançamentos
+- Controle individual de desempenho
+- Acompanhamento de ganhos
 
-### 📊 Indicadores de Performance
+## 🚗 Gestão de Veículos
 
-- Dashboard gerencial
-- Métricas comerciais consolidadas
-- Relatórios de desempenho
-- Acompanhamento de resultados
+- Cadastro de veículos
+- Associação aos serviços realizados
+- Organização dos atendimentos
 
-### 👥 Gestão Comercial
+## 📊 Relatórios
 
-- Controle de vendedores
-- Organização de equipes
-- Histórico de resultados
-- Visão centralizada das operações
+- Relatórios mensais
+- Visualização por período
+- Filtros avançados
+- Totais consolidados
+- Comissão bruta e líquida
 
-### 📱 Interface Moderna
+## 💾 Backup e Segurança
+
+- Geração de backup local dos dados
+- Exportação rápida das informações
+- Restauração completa do sistema através de arquivo de backup
+- Proteção contra perda de dados
+
+## 📱 Interface Moderna
 
 - Layout responsivo
+- Tema escuro profissional
 - Navegação intuitiva
 - Compatível com desktop, tablet e smartphone
-- Experiência otimizada para produtividade
 
 ---
 
-## 🎯 Benefícios
+# 🎯 Benefícios
 
-✅ Elimina cálculos manuais
+✅ Economia de tempo
 
-✅ Reduz erros operacionais
+✅ Redução de erros manuais
 
-✅ Aumenta a transparência das comissões
+✅ Controle financeiro centralizado
 
-✅ Facilita o acompanhamento de metas
+✅ Transparência nas comissões
 
-✅ Centraliza informações comerciais
+✅ Segurança dos dados com backup
 
-✅ Melhora a tomada de decisões
+✅ Relatórios rápidos e organizados
 
-✅ Aumenta a produtividade da equipe
-
----
-
-## 🛠️ Tecnologias Utilizadas
-
-- **Next.js**
-- **React**
-- **JavaScript**
-- **Tailwind CSS**
-- **Vercel**
+✅ Melhor acompanhamento dos resultados
 
 ---
 
-## 🚀 Executando Localmente
+# 🛠️ Tecnologias
 
-### Clone o repositório
+- Next.js
+- React
+- JavaScript
+- Tailwind CSS
+- Vercel
+- Local Storage para persistência dos dados
+
+---
+
+# 🚀 Instalação
+
+Clone o repositório:
 
 ```bash
 git clone https://github.com/rehstival/Comissoes-Pro.git
 ```
 
-### Acesse o diretório
+Entre na pasta:
 
 ```bash
 cd Comissoes-Pro
 ```
 
-### Instale as dependências
+Instale as dependências:
 
 ```bash
 npm install
 ```
 
-### Execute o projeto
+Execute o projeto:
 
 ```bash
 npm run dev
 ```
 
-### Abra no navegador
+Abra:
 
 ```txt
 http://localhost:3000
@@ -146,10 +158,11 @@ http://localhost:3000
 
 ---
 
-## 📁 Estrutura do Projeto
+# 📁 Estrutura
 
 ```txt
 Comissoes-Pro/
+│
 ├── app/
 ├── components/
 ├── public/
@@ -163,58 +176,55 @@ Comissoes-Pro/
 
 ---
 
-## 🌐 Deploy
+# 🔐 Backup e Recuperação
+
+O sistema possui uma funcionalidade integrada de backup que permite salvar todos os dados cadastrados em um arquivo local.
+
+Em caso de troca de computador, limpeza do navegador ou necessidade de recuperação, basta utilizar a função **Restaurar Backup** para recuperar as informações anteriormente salvas.
+
+---
+
+# 🌎 Produção
 
 A aplicação está disponível em:
 
-**Produção:**  
-https://comissoes-pro-ashen.vercel.app/
+👉 https://comissoes-pro-ashen.vercel.app/
 
 ---
 
-## 🔮 Roadmap
+# 🔮 Roadmap
 
-Funcionalidades planejadas para próximas versões:
-
-- [ ] Exportação para Excel
-- [ ] Exportação para PDF
-- [ ] Dashboard avançado
-- [ ] Notificações automáticas
-- [ ] Gestão de equipes
-- [ ] Relatórios personalizados
-- [ ] Integração com CRM
+- [ ] Exportação PDF
+- [ ] Relatórios avançados
+- [ ] Dashboard com gráficos
+- [ ] Multiusuários
 - [ ] Controle de permissões
+- [ ] Backup em nuvem
+- [ ] Integração com WhatsApp
+- [ ] Integração com ERP
 
 ---
 
-## 🤝 Contribuição
+# 👨‍💻 Desenvolvedor
 
-Atualmente este projeto é de uso privado.
+**Rehstival**
 
-Sugestões, melhorias e feedbacks são sempre bem-vindos para evolução da plataforma.
-
----
-
-## 👨‍💻 Autor
-
-Desenvolvido por **Rehstival**.
-
-Entre em contato para sugestões, melhorias ou oportunidades de parceria.
+Desenvolvimento focado em produtividade, automação e soluções para gestão empresarial.
 
 ---
 
-## 📄 Licença
+# 📄 Licença
 
-Este projeto é privado e protegido por direitos autorais.
+Este projeto é privado.
 
-**© ComissõesPro - Todos os direitos reservados.**
+Todos os direitos reservados © ComissõesPro.
 
 ---
 
 <div align="center">
 
-### Transformando a gestão de comissões em um processo simples, transparente e eficiente.
+### Simplificando a gestão de comissões para oficinas mecânicas.
 
-⭐ Se gostou do projeto, deixe uma estrela no repositório.
+⭐ Se este projeto foi útil, deixe uma estrela no repositório.
 
 </div>
